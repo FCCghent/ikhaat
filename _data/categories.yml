@@ -13,5 +13,8 @@
 - name: Cafés
   location:
 
+- name: Toeristen
+  location: http://datatank.stad.gent/4/bevolking/gentinfopunten.geojson
+
 - name: Haters
   location:
