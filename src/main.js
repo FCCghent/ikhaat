@@ -20,7 +20,7 @@ $.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCal
       },
       "geometry": data
     };
-    geodata.honden = L.geoJson(geojsonFeature);
+    geodata.{{category.name | downcase }} = L.geoJson(geojsonFeature);
   }
 {% endfor %}
 
