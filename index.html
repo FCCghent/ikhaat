@@ -4,18 +4,12 @@ layout: default
 <div class="menu">
   <h1>{{site.title}}</h1>
   <form id="controls">
+    {% for category  in site.data.categories %}
     <div>
-      <input type="checkbox" name="honden">
-      <label for="honden">Honden</label>
+      <input type="checkbox" name="{{ category.name|downcase }}">
+      <label for="{{ category.name|downcase }}">{{ category.name|capitalize }}</label>
     </div>
-    <div>
-      <input type="checkbox" name="studenten">
-      <label for="studenten">Studenten</label>
-    </div>
-    <div>
-      <input type="checkbox" name="haters">
-      <label for="haters">Haters</label>
-    </div>
+    {% endfor %}
   </form>
 </div>
 <div class="map">
