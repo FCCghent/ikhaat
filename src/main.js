@@ -2,13 +2,12 @@
 # comment for jekyll
 ---
 
-var honden;
-var studenten;
+var geodata = {};
 
-$.getJSON("http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson", getStudentenCallback);
+$.getJSON("http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson", getHondenCallback);
 $.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
 
-function getStudentenCallback(data) {
+function getHondenCallback(data) {
   var geojsonFeature = {
     "type": "Feature",
     "properties": {
@@ -18,7 +17,7 @@ function getStudentenCallback(data) {
     },
     "geometry": data
   };
-  studenten = L.geoJson(geojsonFeature);
+  geodata.honden = L.geoJson(geojsonFeature);
 }
 
 var mymap = L.map('ikhaatmap').setView([51.05, 3.73], 13);
@@ -50,29 +49,15 @@ window.addEventListener('resize', function(){
   }, 250);
 });
 
-//var myjson;
-//$.getJSON("http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson", function(json){
-//    myjson = json;
-//});
-
-//console.log(myjson);
-
+// hide and display shizzles
 var hidePoints = function(index) {
-  if (index === 0) {
-    mymap.removeLayer(studenten);
-  }
-  else if (index === 1) {
-    mymap.removeLayer(wijken);
-  }
+  console.log(index,geodata,geodata[index],index);
+  mymap.removeLayer(geodata[index]);
 }
 
 var displayPoints = function(index) {
-  if (index === 0) {
-    mymap.addLayer(studenten);
-  }
-  else if (index === 1) {
-    mymap.addLayer(wijken);
-  }
+  console.log(index,geodata,geodata[index],index);
+  mymap.addLayer(geodata[index]);
 }
 
 var categories = {{site.data.categories | jsonify }};
@@ -86,13 +71,13 @@ for (var i = checks.length; i--;) {
     if(this.checked) {
       for (var j = categories.length; j--;) {
         if (e.target.name === categories[j].name.toLowerCase()) {
-          displayPoints(j);
+          displayPoints(e.target.name);
         }
       }
     } else {
       for (var j = categories.length; j--;) {
         if (e.target.name === categories[j].name.toLowerCase()) {
-          hidePoints(j);
+          hidePoints(e.target.name);
         }
       }
     }
