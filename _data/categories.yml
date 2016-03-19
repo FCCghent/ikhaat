@@ -1,5 +1,5 @@
 - name: Honden
-  location: Path To File
+  location: http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson
 
 - name: Studenten
   location: Path To File
