@@ -8,10 +8,10 @@ $accent: #3367D6;
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif, 'Montserrat';
+  height: 100vh;
   display: flex;
   flex-direction: column;
   @media (min-width: 60em) {
-    height: 100vh;
     flex-direction: row;
   }
 }
@@ -23,12 +23,14 @@ h1 {
 .menu {
   background-color: $accent;
   box-shadow: 0.1rem 1rem 1.8rem rgba(0,0,0,0.26);
+  padding: 2em;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
   color: $light;
+  z-index: 1;
 
   form {
     display: flex;
@@ -38,7 +40,6 @@ h1 {
 }
 
 .map {
-  width: 100%;
-  height: 100%;
+  flex-grow: 1;
   background-color:red;
 }
