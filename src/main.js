@@ -64,11 +64,9 @@ var checks = document.querySelectorAll('input[type=checkbox]');
 
 for (var i = checks.length; i--;) {
   checks[i].addEventListener('change',function(e){
-
     for (var j = categories.length; j--;) {
-      if (e.target.name === j.name) {
-        console.log(j.name);
-        displayPoints(j.name);
+      if (e.target.name === categories[j].name.toLowerCase()) {
+        displayPoints(categories[j].location);
       }
     }
   });
