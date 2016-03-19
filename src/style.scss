@@ -36,12 +36,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    div {
-      input:checked ~ label {
-        color: blue;
-      }
-    }
   }
 }
 

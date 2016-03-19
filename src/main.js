@@ -13,18 +13,22 @@ accessToken: 'pk.eyJ1IjoiaHlwZXJiYXRvbiIsImEiOiJjaWx5eThiOW0wMGdudmZtNjNnNThmamQ
 }).addTo(mymap);
 
 // ugly styling of leaflet
+var sizeFrames = function() {
+  if (window.innerWidth > 960) {
+      // sidebar
+      document.getElementById('ikhaatmap').style.width = window.innerWidth - document.getElementById('menu').offsetWidth + 'px';
+  } else {
+      // over eachother
+      document.getElementById('ikhaatmap').style.height = window.innerHeight - document.getElementById('menu').offsetHeight + 'px';
+  }
+}
 
+sizeFrames();
 var resizeTimer;
 window.addEventListener('resize', function(){
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(function() {
-    if (window.innerWidth > 960) {
-        // sidebar
-        document.getElementById('ikhaatmap').style.width = window.innerWidth - document.getElementById('menu').offsetWidth + 'px';
-    } else {
-        // over eachother
-        document.getElementById('ikhaatmap').style.height = window.innerHeight - document.getElementById('menu').offsetHeight + 'px';
-    }
+    sizeFrames();
   }, 250);
 });
 
@@ -35,18 +39,37 @@ window.addEventListener('resize', function(){
 
 //console.log(myjson);
 
-$.getJSON("http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson", getJsonCallback);
+var displayPoints = function(dataset) {
+  $.getJSON(dataset, getJsonCallback);
 
-function getJsonCallback(data)
-{
-  var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-      "name": "Hondenvoorzieningen",
-      "amenity": "blablabla",
-      "popupContent": "Crap! Mogelijks een megagevaarlijke hond hier!"
-    },
-    "geometry": data
-  };
-  L.geoJson(geojsonFeature).addTo(mymap);
+  function getJsonCallback(data) {
+    var geojsonFeature = {
+      "type": "Feature",
+      "properties": {
+        "name": "Hondenvoorzieningen",
+        "amenity": "blablabla",
+        "popupContent": "Crap! Mogelijks een megagevaarlijke hond hier!"
+      },
+      "geometry": data
+    };
+    L.geoJson(geojsonFeature).addTo(mymap);
+  }
+}
+
+var categories = {{site.data.categories | jsonify }};
+
+// get the features that need to be displayed
+
+var checks = document.querySelectorAll('input[type=checkbox]');
+
+for (var i = checks.length; i--;) {
+  checks[i].addEventListener('change',function(e){
+
+    for (var j = categories.length; j--;) {
+      if (e.target.name === j.name) {
+        console.log(j.name);
+        displayPoints(j.name);
+      }
+    }
+  });
 }
