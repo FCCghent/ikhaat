@@ -64,7 +64,9 @@ var hidePoints = function(index) {
 
 var displayPoints = function(index) {
   console.log(index,geodata,geodata[index],index);
+  document.body.classList.add('loading');
   mymap.addLayer(geodata[index]);
+  document.body.classList.remove('loading');
 }
 
 var categories = {{site.data.categories | jsonify }};

@@ -21,6 +21,10 @@ body {
   @media (min-width: 960px) {
     flex-direction: row;
   }
+
+  &.loading:before {
+    content: 'waiting…';
+  }
 }
 
 h1 {
