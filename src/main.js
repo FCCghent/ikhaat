@@ -22,6 +22,7 @@ function getStudentenCallback(data) {
 }
 
 var mymap = L.map('ikhaatmap').setView([51.05, 3.73], 13);
+
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
 maxZoom: 18,
@@ -98,25 +99,29 @@ for (var i = checks.length; i--;) {
   });
 }
 
-function getWijkenCallback(data)
-{
-  var mp = {
+// get wijken
+
+$.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
+
+function getWijkenCallback(data) {
+  var wijken = new L.GeoJSON({
     "type": "Feature",
     "geometry": data,
     "properties": {
       "name": "MultiPolygon",
       "style": {
-          color: "black",
-          opacity: 1,
-          fillColor: "red",
-          fillOpacity: 1
+        strokeWidth: 3,
+        color: "black",
+        opacity: .6,
+        fillColor: "red",
+        fillOpacity: .6
       }
     }
-  };
-  wijken = new L.GeoJSON(mp, {
+  }, {
     style: function(feature) {
       return feature.properties.style
     }
   });
+  mymap.addLayer(wijken);
 }
 

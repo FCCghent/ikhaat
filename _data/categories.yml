@@ -2,4 +2,16 @@
   location: http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson
 
 - name: Studenten
-  location: Path To File
+  location:
+
+- name: Kinderen
+  location: http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson
+
+- name: Ouderen
+  location:
+
+- name: Cafés
+  location:
+
+- name: Haters
+  location:
