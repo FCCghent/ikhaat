@@ -1,26 +1,18 @@
 # the language
-lang:
+lang: nl
 # author info
-author:
-  name:
-  email:
-  twitter:
+author: [Haroen Viaene, Elias Meire, Simon Wydooghe]
 # title and description
-title:
-description:
+title: Ik Haat Gent
+description: Vermijd wat je haat in Gent
 # the url this will be published at
-url:
-baseurl:
+url: #'http://ikhaat.gent'
 # the theme colour
 color:
 # location of some files
-css:
-scripts:
-favicon:
-# alternative to JEKYLL_ENV
-development: true
-# google analytics
-analytics:
+css: 'src/style.css'
+scripts: 'src/main.js'
+favicon: 'src/favicon.png'
 #configuration
 sass:
   style: compressed
