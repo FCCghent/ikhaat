@@ -11,7 +11,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  @media (min-width: 60em) {
+  @media (min-width: 960px) {
     flex-direction: row;
   }
 }
@@ -36,8 +36,16 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    div {
+      input:checked ~ label {
+        color: blue;
+      }
+    }
   }
 }
+
+
 
 .map {
   flex-grow: 1;
