@@ -11,6 +11,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   @media (min-width: 960px) {
     flex-direction: row;
   }
@@ -31,6 +32,9 @@ h1 {
   justify-content: center;
   color: $light;
   z-index: 1;
+  @media (min-width: 960px) {
+    width: 10%;
+  }
 
   form {
     display: flex;
