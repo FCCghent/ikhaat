@@ -80,6 +80,19 @@ h1 {
     -ms-flex-align: start;
     align-items: flex-start;
   }
+
+  button {
+    font-size: 1em;
+    background-color: $light;
+    border-radius: .2em;
+    border: 1px solid $accent;
+    color: $accent;
+
+    &:active {
+      background-color: $accent;
+      color: $light;
+    }
+  }
 }
 
 input:disabled ~ label{

@@ -8,8 +8,6 @@ if (window.location.protocol === 'https:') {
 
 var geodata = {};
 
-$.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
-
 {% for category in site.data.categories %}
 (function(){
   $.getJSON('{{category.location}}', function(data){
@@ -117,4 +115,16 @@ function getWijkenCallback(data) {
   });
   mymap.addLayer(wijken);
 }
+
+// haters
+document.getElementById('haat').addEventListener('click',function(){
+  var ref = new Firebase('https://ikhaatgent.firebaseio.com');
+  navigator.geolocation.getCurrentPosition(function(pos){
+    $.getJSON('https://ikhaatgent.firebaseio.com/coordinates.json', function(data){
+      data.push([pos.coords.longitude,pos.coords.latitude]);
+      ref.child('coordinates').set(data);
+    });
+  });
+  alert('bedankt voor je haat 👌');
+});
 
