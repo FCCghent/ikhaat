@@ -2,7 +2,24 @@
 # comment for jekyll
 ---
 
-// leaflet + mapbox
+var honden;
+var studenten;
+
+$.getJSON("http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson", getStudentenCallback);
+$.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
+
+function getStudentenCallback(data) {
+  var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+      "name": "Hondenvoorzieningen",
+      "amenity": "blablabla",
+      "popupContent": "Crap! Mogelijks een megagevaarlijke hond hier!"
+    },
+    "geometry": data
+  };
+  studenten = L.geoJson(geojsonFeature);
+}
 
 var mymap = L.map('ikhaatmap').setView([51.05, 3.73], 13);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -39,20 +56,21 @@ window.addEventListener('resize', function(){
 
 //console.log(myjson);
 
-var displayPoints = function(dataset) {
-  $.getJSON(dataset, getJsonCallback);
+var hidePoints = function(index) {
+  if (index === 0) {
+    mymap.removeLayer(studenten);
+  }
+  else if (index === 1) {
+    mymap.removeLayer(wijken);
+  }
+}
 
-  function getJsonCallback(data) {
-    var geojsonFeature = {
-      "type": "Feature",
-      "properties": {
-        "name": "Hondenvoorzieningen",
-        "amenity": "blablabla",
-        "popupContent": "Crap! Mogelijks een megagevaarlijke hond hier!"
-      },
-      "geometry": data
-    };
-    L.geoJson(geojsonFeature).addTo(mymap);
+var displayPoints = function(index) {
+  if (index === 0) {
+    mymap.addLayer(studenten);
+  }
+  else if (index === 1) {
+    mymap.addLayer(wijken);
   }
 }
 
@@ -64,15 +82,21 @@ var checks = document.querySelectorAll('input[type=checkbox]');
 
 for (var i = checks.length; i--;) {
   checks[i].addEventListener('change',function(e){
-    for (var j = categories.length; j--;) {
-      if (e.target.name === categories[j].name.toLowerCase()) {
-        displayPoints(categories[j].location);
+    if(this.checked) {
+      for (var j = categories.length; j--;) {
+        if (e.target.name === categories[j].name.toLowerCase()) {
+          displayPoints(j);
+        }
+      }
+    } else {
+      for (var j = categories.length; j--;) {
+        if (e.target.name === categories[j].name.toLowerCase()) {
+          hidePoints(j);
+        }
       }
     }
   });
 }
-
-$.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
 
 function getWijkenCallback(data)
 {
@@ -89,10 +113,10 @@ function getWijkenCallback(data)
       }
     }
   };
-  new L.GeoJSON(mp, {
+  wijken = new L.GeoJSON(mp, {
     style: function(feature) {
       return feature.properties.style
     }
-  }).addTo(mymap);
+  });
 }
 
