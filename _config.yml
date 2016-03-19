@@ -12,7 +12,7 @@ color:
 # location of some files
 css: 'src/style.css'
 scripts: 'src/main.js'
-favicon: 'src/favicon.png'
+favicon: 'src/apple-touch-icon.png'
 #configuration
 sass:
   style: compressed
