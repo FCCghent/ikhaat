@@ -4,6 +4,17 @@ layout: default
 <aside>
 
 </aside>
+<div class="menu">
+  <h1>{{site.title}}</h1>
+  <form id="controls">
+    {% for category  in site.data.categories %}
+    <div>
+      <input type="checkbox" name="{{ category.name|downcase }}">
+      <label for="{{ category.name|downcase }}">{{ category.name|capitalize }}</label>
+    </div>
+    {% endfor %}
+  </form>
+</div>
 <div class="map">
   <div id="ikhaatmap" style="height:600px;"></div>
 </div>
