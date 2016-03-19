@@ -6,12 +6,12 @@ author: [Haroen Viaene, Elias Meire, Simon Wydooghe]
 title: Ik Haat Gent
 description: Vermijd wat je haat in Gent
 # the url this will be published at
-url: #'http://ikhaat.gent'
+url: 'http://ikhaat.gent'
 # the theme colour
-color:
+color: '#354EA0'
 # location of some files
 css: 'src/style.css'
-scripts: 'src/main.js'
+scripts: ['src/main.js'] #'src/toGeoJSON.js',
 favicon: 'src/apple-touch-icon.png'
 #configuration
 sass:

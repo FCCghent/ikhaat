@@ -13,6 +13,7 @@ $.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCal
 {% for category in site.data.categories %}
 (function(){
   $.getJSON('{{category.location}}', function(data){
+
     var geojsonFeature = {
       "type": "Feature",
       "properties": {
@@ -58,12 +59,10 @@ window.addEventListener('resize', function(){
 
 // hide and display shizzles
 var hidePoints = function(index) {
-  console.log(index,geodata,geodata[index],index);
   mymap.removeLayer(geodata[index]);
 }
 
 var displayPoints = function(index) {
-  console.log(index,geodata,geodata[index],index);
   document.body.classList.add('loading');
   mymap.addLayer(geodata[index]);
   document.body.classList.remove('loading');

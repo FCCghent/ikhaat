@@ -14,6 +14,8 @@
   location:
 
 - name: Toeristen
+  # kml: true
+  # location: http://datatank.stad.gent/4/toerisme/toeristischewandelroutes.kml
   location: http://datatank.stad.gent/4/bevolking/gentinfopunten.geojson
 
 - name: Haters
