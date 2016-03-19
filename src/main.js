@@ -49,5 +49,28 @@ function getHondenCallback(data)
     },
     "geometry": data
   };
-  L.geoJson(geojsonFeature).addTo(mymap);
+  L.GeoJson(geojsonFeature).addTo(mymap);
 }
+
+function getWijkenCallback(data)
+{
+  var mp = {
+    "type": "Feature",
+    "geometry": data,
+    "properties": {
+      "name": "MultiPolygon",
+      "style": {
+          color: "black",
+          opacity: 1,
+          fillColor: "red",
+          fillOpacity: 1
+      }
+    }
+  };
+  new L.GeoJSON(mp, {
+    style: function(feature) {
+      return feature.properties.style
+    }
+  }).addTo(mymap);
+}
+
