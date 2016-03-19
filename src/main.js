@@ -82,10 +82,11 @@ function getWijkenCallback(data)
     "properties": {
       "name": "MultiPolygon",
       "style": {
+          "stroke-width": 3,
           color: "black",
-          opacity: 1,
+          opacity: .6,
           fillColor: "red",
-          fillOpacity: 1
+          fillOpacity: .6
       }
     }
   };
