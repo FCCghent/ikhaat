@@ -4,21 +4,25 @@
 
 var geodata = {};
 
-$.getJSON("http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson", getHondenCallback);
+
 $.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
 
-function getHondenCallback(data) {
-  var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-      "name": "Hondenvoorzieningen",
-      "amenity": "blablabla",
-      "popupContent": "Crap! Mogelijks een megagevaarlijke hond hier!"
-    },
-    "geometry": data
-  };
-  geodata.honden = L.geoJson(geojsonFeature);
-}
+{% for category in site.data.categories %}
+  $.getJSON('{{category.location}}', get{{category.name | capitalize}}Callback);
+
+  function get{{category.name | capitalize}}Callback(data) {
+    var geojsonFeature = {
+      "type": "Feature",
+      "properties": {
+        "name": "{{category.name}}",
+        "amenity": "blablabla",
+        "popupContent": "Crap! Mogelijks een megagevaarlijke hond hier!"
+      },
+      "geometry": data
+    };
+    geodata.honden = L.geoJson(geojsonFeature);
+  }
+{% endfor %}
 
 var mymap = L.map('ikhaatmap').setView([51.05, 3.73], 13);
 
