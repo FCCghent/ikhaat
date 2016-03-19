@@ -2,4 +2,7 @@
   location: http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson
 
 - name: Studenten
-  location: Path To File
+  location: javascript:alert('stommerik');
+
+- name: Kinderen
+  location: http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson
