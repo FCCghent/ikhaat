@@ -77,8 +77,7 @@ for (var i = checks.length; i--;) {
 
 $.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
 
-function getWijkenCallback(data)
-{
+function getWijkenCallback(data) {
   var wijken = new L.GeoJSON({
     "type": "Feature",
     "geometry": data,
