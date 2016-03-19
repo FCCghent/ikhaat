@@ -11,7 +11,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: hidden !important;
   @media (min-width: 960px) {
     flex-direction: row;
   }
