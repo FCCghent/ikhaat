@@ -52,12 +52,12 @@ window.addEventListener('resize', function(){
 // hide and display shizzles
 var hidePoints = function(index) {
   console.log(index,geodata,geodata[index],index);
-  mymap.removeLayer(geodata.index);
+  mymap.removeLayer(geodata[index]);
 }
 
 var displayPoints = function(index) {
   console.log(index,geodata,geodata[index],index);
-  mymap.addLayer(geodata.index);
+  mymap.addLayer(geodata[index]);
 }
 
 var categories = {{site.data.categories | jsonify }};
