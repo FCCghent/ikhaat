@@ -5,6 +5,7 @@
 // leaflet + mapbox
 
 var mymap = L.map('ikhaatmap').setView([51.05, 3.73], 13);
+
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
 maxZoom: 18,
@@ -78,24 +79,24 @@ $.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCal
 
 function getWijkenCallback(data)
 {
-  var mp = {
+  var wijken = new L.GeoJSON({
     "type": "Feature",
     "geometry": data,
     "properties": {
       "name": "MultiPolygon",
       "style": {
-          "stroke-width": 3,
-          color: "black",
-          opacity: .6,
-          fillColor: "red",
-          fillOpacity: .6
+        strokeWidth: 3,
+        color: "black",
+        opacity: .6,
+        fillColor: "red",
+        fillOpacity: .6
       }
     }
-  };
-  new L.GeoJSON(mp, {
+  }, {
     style: function(feature) {
       return feature.properties.style
     }
-  }).addTo(mymap);
+  });
+  mymap.addLayer(wijken);
 }
 
