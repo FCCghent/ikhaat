@@ -5,6 +5,12 @@
 $light: #FFFFFF;
 $accent: #3367D6;
 
+html {
+  padding: 0;
+  margin: 0;
+  overflow: hidden !important;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif, 'Montserrat';
