@@ -32,7 +32,7 @@ h1 {
 }
 
 .menu {
-  background-color: $accent;
+  background-color: $light;
   box-shadow: 0.1rem 1rem 1.8rem rgba(0,0,0,0.26);
   padding: 2em;
   display: flex;
@@ -40,10 +40,14 @@ h1 {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: $light;
+  color: $accent;
   z-index: 1;
   @media (min-width: 960px) {
     width: 10%;
+  }
+
+  a {
+    color: inherit;
   }
 
   form {
