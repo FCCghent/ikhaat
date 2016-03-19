@@ -29,6 +29,11 @@ body {
 
 h1 {
   font-family: 'Montserrat', sans-serif;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .menu {
