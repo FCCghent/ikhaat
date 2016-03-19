@@ -16,9 +16,10 @@ accessToken: 'pk.eyJ1IjoiaHlwZXJiYXRvbiIsImEiOiJjaWx5eThiOW0wMGdudmZtNjNnNThmamQ
 
 //console.log(myjson);
 
-$.getJSON("http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson", getJsonCallback);
+$.getJSON("http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson", getHondenCallback);
+$.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
 
-function getJsonCallback(data)
+function getHondenCallback(data)
 {
   var geojsonFeature = {
     "type": "Feature",
