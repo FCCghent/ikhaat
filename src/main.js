@@ -72,6 +72,8 @@ for (var i = checks.length; i--;) {
   });
 }
 
+// get wijken
+
 $.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
 
 function getWijkenCallback(data)

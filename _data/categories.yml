@@ -6,3 +6,6 @@
 
 - name: Kinderen
   location: http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson
+
+- name: Haters
+  location: javascript:alert('stommerik');
