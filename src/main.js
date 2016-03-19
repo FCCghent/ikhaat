@@ -11,9 +11,8 @@ var geodata = {};
 $.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
 
 {% for category in site.data.categories %}
-  $.getJSON('{{category.location}}', get{{category.name | capitalize}}Callback);
-
-  function get{{category.name | capitalize}}Callback(data) {
+(function(){
+  $.getJSON('{{category.location}}', function(data){
     var geojsonFeature = {
       "type": "Feature",
       "properties": {
@@ -24,7 +23,8 @@ $.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCal
       "geometry": data
     };
     geodata.{{category.name | downcase }} = L.geoJson(geojsonFeature);
-  }
+  });
+})();
 {% endfor %}
 
 var mymap = L.map('ikhaatmap').setView([51.05, 3.73], 12);
