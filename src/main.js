@@ -1,9 +1,12 @@
 ---
 # comment for jekyll
 ---
+// wow so pretty ♥️
+if (window.location.protocol === 'https:') {
+    window.location.protocol = 'http:';
+}
 
 var geodata = {};
-
 
 $.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
 
