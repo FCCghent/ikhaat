@@ -8,7 +8,7 @@
   location: http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson
 
 - name: Ouderen
-  location:
+  location: http://datatank.stad.gent/4/doelgroepen/clubhuizenvoorsenioren.geojson
 
 - name: Cafés
   location:
