@@ -1,0 +1,26 @@
+# the language
+lang:
+# author info
+author:
+  name:
+  email:
+  twitter:
+# title and description
+title:
+description:
+# the url this will be published at
+url:
+baseurl:
+# the theme colour
+color:
+# location of some files
+css:
+scripts:
+favicon:
+# alternative to JEKYLL_ENV
+development: true
+# google analytics
+analytics:
+#configuration
+sass:
+  style: compressed
