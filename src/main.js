@@ -28,7 +28,7 @@ var geodata = {};
 
 var mymap = L.map('ikhaatmap').setView([51.05, 3.73], 12);
 
-L.tileLayer('https://a.tiles.mapbox.com/v4/mslee.ad466bba/{z}/{x}/{y}.png?access_token={accessToken}', {
+L.tileLayer('https://a.tiles.mapbox.com/v4/mslee.ad466bba/{z}/{x}/{y}'+(L.Browser.retina?'@2x':'')+'.png?access_token={accessToken}', {
 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
 maxZoom: 30,
 id: 'hyperbaton.pep3hi9n',
