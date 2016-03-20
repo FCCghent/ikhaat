@@ -156,7 +156,13 @@ document.getElementById('burger').addEventListener('click',function(){
 });
 
 // haters
-document.getElementById('haat').addEventListener('click',function(){
+// hack: we need to prevent the form from being submitted
+document.getElementById('controls').addEventListener('submit',function(){
+  console.log('haha tis e twuk e');
+  return false;
+});
+document.getElementById('haat').addEventListener('click',function(e){
+  e.preventDefault();
   var ref = new Firebase('https://ikhaatgent.firebaseio.com');
   navigator.geolocation.getCurrentPosition(function(pos){
     $.getJSON('https://ikhaatgent.firebaseio.com/coordinates.json', function(data){
@@ -166,3 +172,4 @@ document.getElementById('haat').addEventListener('click',function(){
     });
   });
 });
+
