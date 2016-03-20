@@ -30,11 +30,18 @@ icons.{{category.name | downcase }} = L.icon({
       },
       "geometry": data
     };
-    geodata.{{category.name | downcase }} = L.geoJson(geojsonFeature{% if category.icon %}, {
+    geodata.{{category.name | downcase }} = L.geoJson(geojsonFeature, {
+      {% if category.icon %}
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {icon: icons.{{ category.name | downcase}} });
+        },
+        {% endif %}
+        onEachFeature: function(feature, layer) {
+          if (feature.properties && feature.properties.popupContent) {
+            layer.bindPopup(feature.properties.popupContent);
+          }
         }
-    }{% endif %});
+    });
   });
 })();
 {% endfor %}
