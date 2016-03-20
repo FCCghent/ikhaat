@@ -18,6 +18,7 @@
 
 - name: Cafés
   location:
+  icon: assets/Cafés Oranje.svg
 
 - name: Toeristen
   # kml: true
