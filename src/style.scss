@@ -44,6 +44,7 @@ h1 {
 }
 
 .menu {
+  position: relative;
   background-color: $light;
   box-shadow: 0.1rem 1rem 1.8rem rgba(0,0,0,0.26);
   padding: .5em 2em;
@@ -80,6 +81,16 @@ h1 {
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
+
+    button,p,div{
+      margin: .2em;
+    }
+
+    &.collapsed {
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
   }
 
   button {
@@ -94,6 +105,16 @@ h1 {
       background-color: $accent;
       color: $light;
     }
+  }
+}
+
+#burger {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+
+  @media (min-width: 960px) {
+    display: none;
   }
 }
 

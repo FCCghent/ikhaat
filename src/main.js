@@ -116,6 +116,19 @@ function getWijkenCallback(data) {
   mymap.addLayer(wijken);
 }
 
+// bamburger
+document.getElementById('burger').addEventListener('click',function(){
+  if (document.getElementById('controls').classList.contains('collapsed')) {
+    document.getElementById('controls').classList.remove('collapsed');
+    this.innerHTML = '▲';
+    sizeFrames();
+  } else {
+    document.getElementById('controls').classList.add('collapsed');
+    this.innerHTML = '▼';
+    sizeFrames();
+  }
+});
+
 // haters
 document.getElementById('haat').addEventListener('click',function(){
   var ref = new Firebase('https://ikhaatgent.firebaseio.com');
