@@ -162,8 +162,7 @@ document.getElementById('haat').addEventListener('click',function(){
     $.getJSON('https://ikhaatgent.firebaseio.com/coordinates.json', function(data){
       data.push([pos.coords.longitude,pos.coords.latitude]);
       ref.child('coordinates').set(data);
+      alert('bedankt voor je haat 👌');
     });
-    alert('bedankt voor je haat 👌');
   });
 });
-
