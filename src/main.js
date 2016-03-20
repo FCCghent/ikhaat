@@ -138,7 +138,8 @@ function getWijkenCallback(data) {
 
 // bamburger
 var toggles = 0;
-document.getElementById('burger').addEventListener('click',function(){
+document.getElementById('burger').addEventListener('click',function(e){
+  e.preventDefault();
   if (document.getElementById('controls').classList.contains('collapsed')) {
     document.getElementById('controls').classList.remove('collapsed');
     this.innerHTML = '▲';
