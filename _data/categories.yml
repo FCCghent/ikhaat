@@ -27,6 +27,9 @@
   # location: http://datatank.stad.gent/4/toerisme/toeristischewandelroutes.kml
   # location: http://datatank.stad.gent/4/bevolking/gentinfopunten.geojson
 
+- name: Werken
+  # location: http://gipod.api.agiv.be/ws/v1/workassignment?city=gent&enddate={{ site.time | date: '%B'}}
+
 - name: Haters
   location: https://ikhaatgent.firebaseio.com/.json
   icon: assets/Haters Oranje.svg
