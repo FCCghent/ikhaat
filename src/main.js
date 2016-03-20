@@ -137,7 +137,7 @@ document.getElementById('haat').addEventListener('click',function(){
       data.push([pos.coords.longitude,pos.coords.latitude]);
       ref.child('coordinates').set(data);
     });
+    alert('bedankt voor je haat 👌');
   });
-  alert('bedankt voor je haat 👌');
 });
 
