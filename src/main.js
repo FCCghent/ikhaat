@@ -7,11 +7,21 @@ if (window.location.protocol === 'https:') {
 }
 
 var geodata = {};
+var icons = {};
+
 
 {% for category in site.data.categories %}
+{% if category.icon %}
+icons.{{category.name | downcase }} = L.icon({
+    iconUrl: '{{category.icon}}',
+    iconSize: [48, 48],
+    iconAnchor: [16, 37],
+    popupAnchor: [0, -28]
+});
+{% endif %}
+
 (function(){
   $.getJSON('{{category.location}}', function(data){
-
     var geojsonFeature = {
       "type": "Feature",
       "properties": {
@@ -20,7 +30,11 @@ var geodata = {};
       },
       "geometry": data
     };
-    geodata.{{category.name | downcase }} = L.geoJson(geojsonFeature);
+    geodata.{{category.name | downcase }} = L.geoJson(geojsonFeature{% if category.icon %}, {
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {icon: icons.{{ category.name | downcase}} });
+        }
+    }{% endif %});
   });
 })();
 {% endfor %}
