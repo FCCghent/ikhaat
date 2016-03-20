@@ -117,15 +117,21 @@ function getWijkenCallback(data) {
 }
 
 // bamburger
+var toggles = 0;
 document.getElementById('burger').addEventListener('click',function(){
   if (document.getElementById('controls').classList.contains('collapsed')) {
     document.getElementById('controls').classList.remove('collapsed');
     this.innerHTML = '▲';
     sizeFrames();
+    toggles++;
   } else {
     document.getElementById('controls').classList.add('collapsed');
     this.innerHTML = '▼';
     sizeFrames();
+    toggles++;
+  }
+  if (toggles === 10) {
+    document.body.classList.add('easter');
   }
 });
 

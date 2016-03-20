@@ -32,6 +32,18 @@ body {
   &.loading:before {
     content: 'waiting…';
   }
+
+  &.easter:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/5/52/Kabouter_Wesley.jpg');
+    background-size: cover;
+    height: 129.2px;
+    width: 140px;
+    content: '';
+  }
 }
 
 h1 {
