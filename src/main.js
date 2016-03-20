@@ -22,18 +22,10 @@ icons.{{category.name | downcase }} = L.icon({
 
 (function(){
   $.getJSON('{{category.location}}', function(data){
-    var geojsonFeature = {
-      "type": "Feature",
-      "properties": {
-        "name": "{{category.name}}",
-        "popupContent": "Pas op voor {{category.name}} hier!"
-      },
-      "geometry": data
-    };
-    geodata.{{category.name | downcase }} = L.geoJson(geojsonFeature, {
+    geodata.{{category.name | downcase}} = L.geoJson(data, {
       {% if category.icon %}
         pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {icon: icons.{{ category.name | downcase}} });
+            return L.marker(latlng, {icon: icons.{{category.name | downcase}} });
         },
         {% endif %}
         onEachFeature: function(feature, layer) {
