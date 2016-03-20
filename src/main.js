@@ -16,8 +16,7 @@ var geodata = {};
       "type": "Feature",
       "properties": {
         "name": "{{category.name}}",
-        "amenity": "blablabla",
-        "popupContent": "Crap! Mogelijks een megagevaarlijke hond hier!"
+        "popupContent": "Pas op voor {{category.name}} hier!"
       },
       "geometry": data
     };
@@ -101,9 +100,9 @@ function getWijkenCallback(data) {
     "properties": {
       "name": "MultiPolygon",
       "style": {
-        strokeWidth: 3,
-        color: "black",
-        opacity: .6,
+        'weight': 1,
+        color: "white",
+        opacity: 1,
         fillColor: "red",
         fillOpacity: .6
       }
