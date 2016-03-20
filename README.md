@@ -11,6 +11,7 @@ Gemaakt tijdens (M)Apps for Ghent 2016 door Haroen Viaene, Elias Meire, Simon Wy
 
 * Jekyll
 * Open Street Maps
+  * Overpass Turbo
   * Leaflet
   * Mapbox
 * Open Data by Ghent
