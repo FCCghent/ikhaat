@@ -28,7 +28,9 @@
   # location: http://datatank.stad.gent/4/bevolking/gentinfopunten.geojson
 
 - name: Werken
+  # location: src/data/werken.geojson
   # location: http://gipod.api.agiv.be/ws/v1/workassignment?city=gent
+
 
 - name: Haters
   location: https://ikhaatgent.firebaseio.com/.json
