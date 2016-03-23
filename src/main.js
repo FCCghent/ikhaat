@@ -34,6 +34,8 @@ icons.{{category.name | downcase }} = L.icon({
               layer.bindPopup(feature.properties.popupContent);
             } else if(feature.properties.name) {
               layer.bindPopup(feature.properties.name);
+            } else {
+              layer.bindPopup('Pas op voor {{category.name | downcase}}!');
             }
           }
         }
