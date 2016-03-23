@@ -7,12 +7,12 @@ Een site dingen te vermijden die je haat in Gent.
 
 Gemaakt tijdens (M)Apps for Ghent 2016 door Haroen Viaene, Elias Meire, Simon Wydooghe, Leenke De Donder en Aaike Geussens.
 
-# Updating data
+# Updating datagit+https://github.com/haroenv/gipod-to-geojson
 
 * wegenwerken (traffic works)
 
 ```
-npm install
+npm install git+https://github.com/haroenv/gipod-to-geojson
 gipod --type workassignment --query city=gent > src/data/werken.geojson
 ```
 
@@ -24,4 +24,5 @@ gipod --type workassignment --query city=gent > src/data/werken.geojson
   * Leaflet
   * Mapbox
 * Open Data by Ghent
+* [GIPOD](http://gipod.api.agiv.be/#!index.md) (and Haroen's [wrapper](https://github.com/haroenv/gipod-to-geojson))
 * Firebase
