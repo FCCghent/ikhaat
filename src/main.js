@@ -29,8 +29,12 @@ icons.{{category.name | downcase }} = L.icon({
         },
         {% endif %}
         onEachFeature: function(feature, layer) {
-          if (feature.properties && feature.properties.popupContent) {
-            layer.bindPopup(feature.properties.popupContent);
+          if (feature.properties) {
+            if (feature.properties.popupContent) {
+              layer.bindPopup(feature.properties.popupContent);
+            } else if(feature.properties.name) {
+              layer.bindPopup(feature.properties.name);
+            }
           }
         }
     });
