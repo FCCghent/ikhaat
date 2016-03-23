@@ -7,6 +7,15 @@ Een site dingen te vermijden die je haat in Gent.
 
 Gemaakt tijdens (M)Apps for Ghent 2016 door Haroen Viaene, Elias Meire, Simon Wydooghe, Leenke De Donder en Aaike Geussens.
 
+# Updating data
+
+* wegenwerken (traffic works)
+
+```
+npm install
+gipod --type workassignment --query city=gent > src/data/werken.geojson
+```
+
 # Uses
 
 * Jekyll

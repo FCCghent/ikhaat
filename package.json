@@ -1,0 +1,16 @@
+{
+  "name": "ikhaat",
+  "version": "1.0.0",
+  "description": "Avoid things you don't like in Ghent",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FCCghent/ikhaat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FCCghent/ikhaat/issues"
+  },
+  "homepage": "http://ikhaat.gent",
+  "devDependencies": {
+    "gipod-to-geojson": "git+https://github.com/haroenv/gipod-to-geojson.git"
+  }
+}
