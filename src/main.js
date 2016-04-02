@@ -30,11 +30,9 @@ icons.{{category.name | downcase }} = L.icon({
 (function(){
   $.getJSON('{{category.location}}', function(data){
     geodata.{{category.name | downcase}} = L.geoJson(data, {
-      {% if category.icon %}
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {icon: icons.{{category.name | downcase}} });
         },
-        {% endif %}
         onEachFeature: function(feature, layer) {
           if (feature.properties) {
             if (feature.properties.popupContent) {
