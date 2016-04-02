@@ -34,7 +34,6 @@
   # $ node src/data/getWerken.js > src/data/werken.geojson
   # location: http://gipod.api.agiv.be/ws/v1/workassignment?city=gent
 
-
 - name: Haters
   location: https://ikhaatgent.firebaseio.com/.json
   icon: src/svg/oranje/haters.svg
