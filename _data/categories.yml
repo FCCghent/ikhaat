@@ -1,38 +1,40 @@
 - name: Honden
   location: http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson
-  icon: assets/Honden Oranje.svg
+  icon: src/svg/oranje/honden.svg
 
 - name: Studenten
   # http://overpass-turbo.eu/s/f7Y
   location: src/data/universiteiten.geojson
-  icon: assets/Studenten Oranje.svg
+  icon: src/svg/oranje/studenten.svg
 
 - name: Kinderen
   location: http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson
-  icon: assets/Kinderen Oranje.svg
+  icon: src/svg/oranje/kinderen.svg
 
 - name: Ouderen
   location: http://datatank.stad.gent/4/doelgroepen/clubhuizenvoorsenioren.geojson
-  icon: assets/Ouderen Oranje.svg
+  icon: src/svg/oranje/ouderen.svg
 
 - name: Cafés
   # http://overpass-turbo.eu/s/f8i
   location: src/data/cafes.geojson
-  icon: assets/Cafés Oranje.svg
+  icon: src/svg/oranje/cafés.svg
 
 - name: Toeristen
   # http://overpass-turbo.eu/s/f8j
   location: src/data/toerisme.geojson
+  icon: src/svg/oranje/toerisme.svg
   # kml: true
   # location: http://datatank.stad.gent/4/toerisme/toeristischewandelroutes.kml
   # location: http://datatank.stad.gent/4/bevolking/gentinfopunten.geojson
 
 - name: Werken
   location: src/data/werken.geojson
+  icon: src/svg/oranje/wegenwerken.svg
   # $ node src/data/getWerken.js > src/data/werken.geojson
   # location: http://gipod.api.agiv.be/ws/v1/workassignment?city=gent
 
 
 - name: Haters
   location: https://ikhaatgent.firebaseio.com/.json
-  icon: assets/Haters Oranje.svg
+  icon: src/svg/oranje/haters.svg

@@ -18,6 +18,13 @@ icons.{{category.name | downcase }} = L.icon({
     iconAnchor: [16, 37],
     popupAnchor: [0, -28]
 });
+{% else %}
+icons.{{category.name | downcase }} = L.icon({
+    iconUrl: 'src/svg/oranje/default.svg',
+    iconSize: [48, 48],
+    iconAnchor: [16, 37],
+    popupAnchor: [0, -28]
+});
 {% endif %}
 
 (function(){
