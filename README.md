@@ -12,7 +12,7 @@ Gemaakt tijdens (M)Apps for Ghent 2016 door Haroen Viaene, Elias Meire, Simon Wy
 * wegenwerken (traffic works)
 
 ```
-npm install git+https://github.com/haroenv/gipod-to-geojson
+npm install -g gipod-to-geojson
 gipod --type workassignment --query city=gent > src/data/werken.geojson
 ```
 
