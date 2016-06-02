@@ -169,7 +169,12 @@ document.getElementById('controls').addEventListener('submit',function(){
 });
 document.getElementById('haat').addEventListener('click',function(e){
   e.preventDefault();
-  var ref = new Firebase('https://ikhaatgent.firebaseio.com');
+  firebase.initializeApp({
+    apiKey: "AIzaSyCIaKHVOB5_xSiD-UQSY9n5bqoDcdaj7yY",
+    authDomain: "ikhaatgent.firebaseapp.com",
+    databaseURL: 'https://ikhaatgent.firebaseio.com'
+  });
+  var ref = firebase.database().ref('/');
   navigator.geolocation.getCurrentPosition(function(pos){
     $.getJSON('https://ikhaatgent.firebaseio.com/coordinates.json', function(data){
       data.push([pos.coords.longitude,pos.coords.latitude]);
