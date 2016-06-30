@@ -11,7 +11,7 @@ env:
     - GH_PROJECT_NAME=ikhaat
 script:
   - npm run gipod
-  - npm run toeristen
+  - npm run toerisme
   - npm run studenten
   - npm run cafes
   - curl -s -o src/data/speelterreinen.geojson http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson
