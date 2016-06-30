@@ -1,5 +1,6 @@
 - name: Honden
-  location: http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson
+  # location: http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson
+  location: src/data/hondenvoorzieningen.geojson
   icon: src/svg/oranje/honden.svg
 
 - name: Studenten
