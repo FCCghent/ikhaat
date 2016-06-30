@@ -2,8 +2,8 @@
 # comment for jekyll
 ---
 // wow so pretty ♥️
-if (window.location.protocol === 'https:') {
-    window.location.protocol = 'http:';
+if (window.location.protocol === 'http:') {
+    window.location.protocol = 'https:';
 }
 
 var geodata = {};
@@ -117,7 +117,7 @@ for (var i = checks.length; i--;) {
 
 // get wijken
 
-$.getJSON("http://datatank.stad.gent/4/grondgebied/wijken.geojson", getWijkenCallback);
+$.getJSON("src/data/wijken.geojson", getWijkenCallback);
 
 function getWijkenCallback(data) {
   var wijken = new L.GeoJSON({
