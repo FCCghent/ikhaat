@@ -7,7 +7,7 @@ layout: default
   <form id="controls">
     {% for category  in site.data.categories %}
     <div>
-        <input type="checkbox" name="{{ category.name|downcase }}" {% unless category.location %}disabled{% endunless %}/>
+        <input type="checkbox" id="{{ category.name|downcase }}" name="{{ category.name|downcase }}" {% unless category.location %}disabled{% endunless %}/>
         <label for="{{ category.name|downcase }}">{{ category.name|capitalize }}</label>
     </div>
     {% endfor %}
