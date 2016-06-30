@@ -15,5 +15,5 @@ after_success:
   - git config --global push.default simple
   - git config user.name "Haroen Viaene"
   - git config user.email "hello@haroen.me"
-  - git commit src/data/werken.geojson -m "HELLO I AM HERE TO TELL YOU THE TIME"
+  - git commit src/data/werken.geojson -m "update data of werken"
   - git push https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:gh-pages > /dev/null 2>&1
