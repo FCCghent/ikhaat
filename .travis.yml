@@ -11,9 +11,9 @@ env:
     - GH_PROJECT_NAME=ikhaat
 script:
   - npm run gipod
-  - curl -i http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson -o src/data/speelterreinen.geojson
-  - curl -i http://datatank.stad.gent/4/doelgroepen/clubhuizenvoorsenioren.geojson -o src/data/clubhuizenvoorsenioren.geojson
-  - curl -i http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson -o src/data/hondenvoorzieningen.geojson
+  - curl http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson -o src/data/speelterreinen.geojson
+  - curl http://datatank.stad.gent/4/doelgroepen/clubhuizenvoorsenioren.geojson -o src/data/clubhuizenvoorsenioren.geojson
+  - curl http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson -o src/data/hondenvoorzieningen.geojson
 after_success:
   - git config --global push.default simple
   - git config user.name "Haroen Viaene"
