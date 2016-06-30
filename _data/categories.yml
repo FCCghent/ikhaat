@@ -8,11 +8,13 @@
   icon: src/svg/oranje/studenten.svg
 
 - name: Kinderen
-  location: http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson
+  # location: http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson
+  location: src/data/speelterreinen.geojson
   icon: src/svg/oranje/kinderen.svg
 
 - name: Ouderen
-  location: http://datatank.stad.gent/4/doelgroepen/clubhuizenvoorsenioren.geojson
+  # location: http://datatank.stad.gent/4/doelgroepen/clubhuizenvoorsenioren.geojson
+  location: src/data/clubhuizenvoorsenioren.geojson
   icon: src/svg/oranje/ouderen.svg
 
 - name: Cafés
