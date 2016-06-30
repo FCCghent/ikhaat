@@ -7,7 +7,7 @@
     "url": "git+https://github.com/FCCghent/ikhaat.git"
   },
   "scripts": {
-    "gipod": "gipod --type workassignment --query city=gent > src/data/werken.geojson"
+    "gipod": "./node_modules/gipod-to-geojson/gipod.js --type workassignment --query city=gent > src/data/werken.geojson"
   },
   "bugs": {
     "url": "https://github.com/FCCghent/ikhaat/issues"
