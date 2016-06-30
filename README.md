@@ -1,6 +1,8 @@
 # Ik Haat Gent ([ikhaat.gent](https://ikhaat.gent))
 > Avoid things you don't like in Ghent
 
+[![Build Status](https://travis-ci.org/FCCghent/ikhaat.svg?branch=gh-pages)](https://travis-ci.org/FCCghent/ikhaat)
+
 Een site dingen te vermijden die je haat in Gent.
 
 # Info
