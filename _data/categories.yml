@@ -21,7 +21,7 @@
 - name: Cafés
   # http://overpass-turbo.eu/s/f8i
   location: src/data/cafes.geojson
-  icon: src/svg/oranje/cafés.svg
+  icon: src/svg/oranje/cafes.svg
 
 - name: Toeristen
   # http://overpass-turbo.eu/s/f8j
