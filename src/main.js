@@ -59,6 +59,8 @@ icons.{{category.name | downcase }} = L.icon({
             } else {
               layer.bindPopup('Pas op voor {{category.name | downcase}}!');
             }
+          } else {
+            layer.bindPopup('Pas op voor {{category.name | downcase}}!');
           }
         }
     });
