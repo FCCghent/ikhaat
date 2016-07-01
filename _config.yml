@@ -14,7 +14,6 @@ css: 'src/style.css'
 scripts:
   - 'https://www.gstatic.com/firebasejs/3.0.2/firebase.js'
   - 'src/leaflet.js'
-  - 'https://code.jquery.com/jquery-2.2.2.min.js'
   - 'src/main.js'
 favicon: 'src/apple-touch-icon.png'
 #configuration

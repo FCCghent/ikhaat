@@ -6,6 +6,21 @@ if (window.location.protocol === 'http:') {
     window.location.protocol = 'https:';
 }
 
+function getJSON(url, successHandler, errorHandler) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('get', url, true);
+  xhr.responseType = 'json';
+  xhr.onload = function() {
+    var status = xhr.status;
+    if (status == 200) {
+      successHandler && successHandler(xhr.response);
+    } else {
+      errorHandler && errorHandler(status);
+    }
+  };
+  xhr.send();
+};
+
 var geodata = {};
 var icons = {};
 
@@ -28,7 +43,7 @@ icons.{{category.name | downcase }} = L.icon({
 {% endif %}
 
 (function(){
-  $.getJSON('{{category.location}}', function(data){
+  getJSON('{{category.location}}', function(data){
     geodata.{{category.name | downcase}} = L.geoJson(data, {
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {icon: icons.{{category.name | downcase}} });
@@ -117,7 +132,7 @@ for (var i = checks.length; i--;) {
 
 // get wijken
 
-$.getJSON("src/data/wijken.geojson", getWijkenCallback);
+getJSON("src/data/wijken.geojson", getWijkenCallback);
 
 function getWijkenCallback(data) {
   var wijken = new L.GeoJSON({
@@ -176,7 +191,7 @@ document.getElementById('haat').addEventListener('click',function(e){
   });
   var ref = firebase.database().ref('/');
   navigator.geolocation.getCurrentPosition(function(pos){
-    $.getJSON('https://ikhaatgent.firebaseio.com/coordinates.json', function(data){
+    getJSON('https://ikhaatgent.firebaseio.com/coordinates.json', function(data){
       data.push([pos.coords.longitude,pos.coords.latitude]);
       ref.child('coordinates').set(data);
       alert('bedankt voor je haat 👌');
