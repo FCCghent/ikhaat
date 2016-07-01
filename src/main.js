@@ -69,14 +69,14 @@ icons.{{category.name | downcase }} = L.icon({
 var mymap = L.map('ikhaatmap').setView([51.05, 3.73], 12);
 
 L.tileLayer('https://a.tiles.mapbox.com/v4/mslee.ad466bba/{z}/{x}/{y}'+(L.Browser.retina?'@2x':'')+'.png?access_token={accessToken}', {
-attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-maxZoom: 30,
-id: 'hyperbaton.pep3hi9n',
-accessToken: 'pk.eyJ1IjoiaHlwZXJiYXRvbiIsImEiOiJjaWx5eThiOW0wMGdudmZtNjNnNThmamQ5In0.TFkmQoeiKHGDPxct3o9Jjg'
+  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+  maxZoom: 30,
+  id: 'hyperbaton.pep3hi9n',
+  accessToken: 'pk.eyJ1IjoiaHlwZXJiYXRvbiIsImEiOiJjaWx5eThiOW0wMGdudmZtNjNnNThmamQ5In0.TFkmQoeiKHGDPxct3o9Jjg'
 }).addTo(mymap);
 
 // ugly styling of leaflet
-var sizeFrames = function() {
+function sizeFrames() {
   if (window.innerWidth > 960) {
       // sidebar
       document.getElementById('ikhaatmap').style.width = window.innerWidth - document.getElementById('menu').offsetWidth + 'px';
@@ -96,11 +96,11 @@ window.addEventListener('resize', function(){
 });
 
 // hide and display shizzles
-var hidePoints = function(index) {
+function hidePoints(index) {
   mymap.removeLayer(geodata[index]);
 }
 
-var displayPoints = function(index) {
+function displayPoints(index) {
   document.body.classList.add('loading');
   mymap.addLayer(geodata[index]);
   document.body.classList.remove('loading');
