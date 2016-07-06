@@ -7,10 +7,11 @@
     "url": "git+https://github.com/FCCghent/ikhaat.git"
   },
   "scripts": {
-    "gipod": "./node_modules/gipod-to-geojson/gipod.js --type workassignment --query city=gent > src/data/werken.geojson",
-    "studenten": "./node_modules/query-overpass/cli.js assets/overpass/studenten.ql > src/data/studenten.geojson",
-    "toerisme": "./node_modules/query-overpass/cli.js assets/overpass/toerisme.ql > src/data/toerisme.geojson",
-    "cafes": "./node_modules/query-overpass/cli.js assets/overpass/cafes.ql > src/data/cafes.geojson"
+    "gipod": "gipod --type workassignment --query city=gent > src/data/werken.geojson",
+    "studenten": "query-overpass assets/overpass/studenten.ql > src/data/studenten.geojson",
+    "toerisme": "query-overpass assets/overpass/toerisme.ql > src/data/toerisme.geojson",
+    "cafes": "query-overpass assets/overpass/cafes.ql > src/data/cafes.geojson",
+    "update": "npm run gipod & npm run studenten & npm run toerisme & npm run cafes"
   },
   "bugs": {
     "url": "https://github.com/FCCghent/ikhaat/issues"

@@ -10,10 +10,7 @@ env:
     - GH_OWNER=FCCGhent
     - GH_PROJECT_NAME=ikhaat
 script:
-  - npm run gipod
-  - npm run toerisme
-  - npm run studenten
-  - npm run cafes
+  - npm run update
   - curl -s -o src/data/speelterreinen.geojson http://datatank.stad.gent/4/cultuursportvrijetijd/speelterreinen.geojson
   - curl -s -o src/data/clubhuizenvoorsenioren.geojson http://datatank.stad.gent/4/doelgroepen/clubhuizenvoorsenioren.geojson
   - curl -s -o src/data/hondenvoorzieningen.geojson http://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson

@@ -11,6 +11,16 @@ Gemaakt tijdens (M)Apps for Ghent 2016 door Haroen Viaene, Elias Meire, Simon Wy
 
 # Updating data
 
+* everything
+
+This is also done by Travis
+
+```
+npm install
+npm run update
+```
+
+
 * wegenwerken (traffic works)
 
 ```
