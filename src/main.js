@@ -164,12 +164,12 @@ document.getElementById('burger').addEventListener('click',function(e){
   e.preventDefault();
   if (document.getElementById('controls').classList.contains('collapsed')) {
     document.getElementById('controls').classList.remove('collapsed');
-    this.innerHTML = '▲';
+    this.innerHTML = this.dataset.openContent;
     sizeFrames();
     toggles++;
   } else {
     document.getElementById('controls').classList.add('collapsed');
-    this.innerHTML = '▼';
+    this.innerHTML = this.dataset.closedContent;
     sizeFrames();
     toggles++;
   }

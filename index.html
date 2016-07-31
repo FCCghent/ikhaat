@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="menu" id="menu">
   <h1><a href="http://ikhaat.gent">Ik haat</a></h1>
-  <button class="burger" id="burger"><!-- ▼ -->▲</button>
+  <button class="burger" id="burger" data-closed-content="▼" data-open-content="▲">▲</button>
   <form id="controls">
     {% for category  in site.data.categories %}
     <div>
