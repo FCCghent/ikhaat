@@ -11,7 +11,8 @@
     "studenten": "query-overpass assets/overpass/studenten.ql > src/data/studenten.geojson",
     "toerisme": "query-overpass assets/overpass/toerisme.ql > src/data/toerisme.geojson",
     "cafes": "query-overpass assets/overpass/cafes.ql > src/data/cafes.geojson",
-    "update": "npm run gipod & npm run studenten & npm run toerisme & npm run cafes"
+    "update": "npm run gipod & npm run studenten & npm run toerisme & npm run cafes",
+    "serve": "jekyll s --ssl-cert assets/ca.crt --ssl-key assets/ca.key"
   },
   "bugs": {
     "url": "https://github.com/FCCghent/ikhaat/issues"

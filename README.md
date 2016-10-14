@@ -26,7 +26,7 @@ This will fetch some of the data manually, and GIPOD is parsed into GeoJSON.
 
 This is a [Jekyll](https://jekyllrb.com) site, so installing Ruby and then doing (`sudo`)`gem install jekyll`. Then you can run the site with `jekyll serve`.
 
-Note: requesting location (for the `haat` button) requires the site to be run via `https` locally as well. You do this by running `jekyll s --ssl-cert assets/ca.crt --ssl-key assets/ca.key`.
+Note: requesting location (for the `haat` button) requires the site to be run via `https` locally as well. You do this by running `jekyll s --ssl-cert assets/ca.crt --ssl-key assets/ca.key`. or `npm run serve` as a shortcut.
 
 # Uses
 
