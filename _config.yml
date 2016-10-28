@@ -12,9 +12,16 @@ color: '#354EA0'
 # location of some files
 css: 'src/style.css'
 scripts:
-  - 'https://www.gstatic.com/firebasejs/3.3.0/firebase.js'
-  - 'src/leaflet.js'
-  - 'src/main.js'
+  -
+    url: src/leaflet.js
+  -
+    url: src/main.js
+  -
+    url: https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js
+    options: async defer
+  -
+    url: https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js
+    options: async defer
 favicon: 'src/apple-touch-icon.png'
 #configuration
 sass:

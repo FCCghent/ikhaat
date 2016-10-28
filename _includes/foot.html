@@ -1,4 +1,4 @@
 {% for script in site.scripts %}
-  <script src='{{site.baseurl}}{{script}}'></script>
+  <script src="{{script.url}}" {{script.options}}></script>
 {% endfor %}
 </html>
