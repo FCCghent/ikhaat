@@ -160,16 +160,18 @@ function getWijkenCallback(data) {
 
 // bamburger
 var toggles = 0;
-document.getElementById('burger').addEventListener('click',function(e){
+document.getElementById('burger').addEventListener('click', function(e){
   e.preventDefault();
   if (document.getElementById('controls').classList.contains('collapsed')) {
     document.getElementById('controls').classList.remove('collapsed');
     this.innerHTML = this.dataset.openContent;
+    this.setAttribute('aria-collapsed','false');
     sizeFrames();
     toggles++;
   } else {
     document.getElementById('controls').classList.add('collapsed');
     this.innerHTML = this.dataset.closedContent;
+    this.setAttribute('aria-collapsed','true');
     sizeFrames();
     toggles++;
   }
