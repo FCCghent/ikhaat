@@ -80,21 +80,22 @@ L.tileLayer('https://a.tiles.mapbox.com/v4/mslee.ad466bba/{z}/{x}/{y}'+(L.Browse
 // ugly styling of leaflet
 function sizeFrames() {
   if (window.innerWidth > 960) {
-      // sidebar
-      document.getElementById('ikhaatmap').style.width = window.innerWidth - document.getElementById('menu').offsetWidth + 'px';
+    // sidebar
+    document.getElementById('ikhaatmap').style.width = window.innerWidth - document.getElementById('menu').offsetWidth + 'px';
+    document.getElementById('ikhaatmap').style.height = '100vh';
   } else {
-      // over eachother
-      document.getElementById('ikhaatmap').style.height = window.innerHeight - document.getElementById('menu').offsetHeight + 'px';
+    // over eachother
+    document.getElementById('ikhaatmap').style.height = window.innerHeight - document.getElementById('menu').offsetHeight + 'px';
+    document.getElementById('ikhaatmap').style.width = '100vw';
   }
 }
 
 sizeFrames();
+
 var resizeTimer;
 window.addEventListener('resize', function(){
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
-    sizeFrames();
-  }, 250);
+  resizeTimer = setTimeout(sizeFrames, 250);
 });
 
 // hide and display shizzles
