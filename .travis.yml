@@ -3,7 +3,7 @@ node_js:
     - 6
 branches:
   only:
-    - gh-pages
+    - dev
 env:
   global:
     - secure: "PXg+OdchfUIeXEwY3ogjK9cgacxwktB8yZvOn1pIEf0Z/B+jU0hJvxAswIcfEth94ptrN4wcsc2Q2m8UB7IjPc5/OlayXUupFvcAeUfIv3idckrFkbZRY664HwmSSuSdvhIBoNbMJ83LCHQIOLz642jwkm0JpxB8LZ6edYsJMS44VSyR9ys8JKAFoEuPZmfIu8TZKuyc+pxSK24FjYOf4OJDusOwGZNYacoQqtYyYd3AcvqU79lRziif9AC1dhWfrTV/tr2uDoeqoAum4mJPvPZSsLa+0n/Bs6/nzRchdidlzqVfJO5so0fH+1Ae3hIKn1TKPZ3Oi4JXqGrUQLtnCkXZYOmR/CCQNoCzJYehhS5GbeNLLSj/+NUg9O3E+qdsPW4ZSP07UK3C5nMt2n+Njqw+xeOY+4TEYibff3aTJ2IB1zoTTq22Zqs3uOdN7SxwBjRiKCJc/ha38pV3i2ZHz7VYo5e3m66P73qwnuBom1CUGNKbvFzV5u82VGbsi9C2iJpHOBVbV0w8MvAcAAZQvvmg3OkAxJIBUHrYpMR3kwPx7enou8qoDgEszhgeQO0/NYotgZI3ranf5TS/m6uH4Sg48J0QjfCRNX7KDiwrs+oDirUJUl7t6GcjaDzJwu3QqhzLnbu5gfbm4BlNkT8oGQFMLtLZRpXR4lIfdRnNteE="
@@ -16,7 +16,7 @@ script:
   - curl -s -o src/data/hondenvoorzieningen.geojson https://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson
 after_success:
   - git config --global push.default simple
-  - git config user.name "Haroen Viaene"
+  - git config user.name "Haroen Viaene [bot]"
   - git config user.email "hello@haroen.me"
   - git commit src/data/* -m "update data [ci skip]"
   - git push https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:gh-pages > /dev/null 2>&1
