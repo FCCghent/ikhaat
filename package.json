@@ -17,9 +17,12 @@
   "bugs": {
     "url": "https://github.com/FCCghent/ikhaat/issues"
   },
-  "homepage": "http://ikhaat.gent",
+  "homepage": "https://ikhaat.gent",
   "dependencies": {
     "gipod-to-geojson": "^2.1.5",
     "query-overpass": "^1.1.0"
+  },
+  "devDependencies": {
+    "gh-pages-travis": "^1.0.0"
   }
 }
