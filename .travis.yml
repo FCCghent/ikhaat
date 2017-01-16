@@ -18,5 +18,5 @@ after_success:
   - git config --global push.default simple
   - git config user.name "Haroen Viaene [bot]"
   - git config user.email "hello@haroen.me"
-  - git commit src/data/* -m "update data [ci skip]"
+  - git commit -am "update things [ci skip]"
   - git push https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:gh-pages > /dev/null 2>&1
