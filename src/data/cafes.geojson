@@ -1,3 +1,1 @@
-{ Error: read ECONNRESET
-    at exports._errnoException (util.js:1022:11)
-    at TCP.onread (net.js:569:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+{ message: 'Request failed: HTTP 429', statusCode: 429 }
