@@ -8,10 +8,8 @@
   },
   "scripts": {
     "gipod": "gipod --type workassignment --query city=gent > src/data/werken.geojson",
-    "studenten": "query-overpass assets/overpass/studenten.ql > src/data/studenten.geojson",
-    "toerisme": "query-overpass assets/overpass/toerisme.ql > src/data/toerisme.geojson",
-    "cafes": "query-overpass assets/overpass/cafes.ql > src/data/cafes.geojson",
-    "update": "npm run gipod & npm run studenten & npm run toerisme & npm run cafes",
+    "overpass": "node src/overpass",
+    "update": "npm run gipod & npm run overpass",
     "serve": "jekyll s --ssl-cert assets/ca.crt --ssl-key assets/ca.key"
   },
   "bugs": {
@@ -23,6 +21,8 @@
     "query-overpass": "^1.1.0"
   },
   "devDependencies": {
+    "fs.promised": "^3.0.0",
     "gh-pages-travis": "^1.0.0"
-  }
+  },
+  "license": "MIT"
 }
