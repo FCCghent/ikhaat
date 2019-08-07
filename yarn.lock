@@ -246,6 +246,7 @@ gh-pages-travis@^1.0.0:
 gipod-to-geojson@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/gipod-to-geojson/-/gipod-to-geojson-2.2.0.tgz#9837586c20b5ba7880795cb980ea3b73182f3cbb"
+  integrity sha1-mDdYbCC1uniAeVy5gOo7cxgvPLs=
   dependencies:
     got "^6.2.0"
 
