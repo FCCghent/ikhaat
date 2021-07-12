@@ -10,9 +10,9 @@
   location: src/data/speelterreinen.geojson
   icon: src/svg/oranje/kinderen.svg
 
-- name: Ouderen
-  location: src/data/clubhuizenvoorsenioren.geojson
-  icon: src/svg/oranje/ouderen.svg
+# - name: Ouderen
+#   location: src/data/clubhuizenvoorsenioren.geojson
+#   icon: src/svg/oranje/ouderen.svg
 
 - name: Cafés
   location: src/data/cafes.geojson
