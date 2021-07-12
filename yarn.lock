@@ -243,10 +243,10 @@ gh-pages-travis@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gh-pages-travis/-/gh-pages-travis-1.0.0.tgz#951dd9a328bfab517267c2d3dd26c5eaa02606ff"
 
-gipod-to-geojson@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/gipod-to-geojson/-/gipod-to-geojson-2.2.0.tgz#9837586c20b5ba7880795cb980ea3b73182f3cbb"
-  integrity sha1-mDdYbCC1uniAeVy5gOo7cxgvPLs=
+gipod-to-geojson@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gipod-to-geojson/-/gipod-to-geojson-3.0.0.tgz#305c2500c38ae5df200e79cba4bb868c0eff665d"
+  integrity sha512-bYAf/YjC8pjs8WDw2BO9pWV/aCod8W1VYUr+qXWAkg7+hX0yps02qe3ZpXsQyrrARL1XVg2fcwGvZ9hsGdc5dg==
   dependencies:
     got "^6.2.0"
 
