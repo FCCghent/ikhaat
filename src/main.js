@@ -70,11 +70,13 @@ icons.{{category.name | downcase }} = L.icon({
 
 var mymap = L.map('ikhaatmap').setView([51.05, 3.73], 12);
 
-L.tileLayer('https://a.tiles.mapbox.com/v4/mslee.ad466bba/{z}/{x}/{y}'+(L.Browser.retina?'@2x':'')+'.png?access_token={accessToken}', {
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
   maxZoom: 30,
-  id: 'hyperbaton.pep3hi9n',
-  accessToken: 'pk.eyJ1IjoiaHlwZXJiYXRvbiIsImEiOiJjaWx5eThiOW0wMGdudmZtNjNnNThmamQ5In0.TFkmQoeiKHGDPxct3o9Jjg'
+  tileSize: 512,
+  zoomOffset: -1,
+  id: 'haroenv/ckr0iok846n4d1ao90b90d3l4',
+  accessToken: 'pk.eyJ1IjoiaGFyb2VudiIsImEiOiJjajRiNGcxb2IwNXpoMndvYWJlYTcwNXYzIn0.EYfoIQ7jfVJuKqXPS7i3zg'
 }).addTo(mymap);
 
 // ugly styling of leaflet
