@@ -29,6 +29,11 @@
   location: src/data/werken.geojson
   icon: src/svg/oranje/wegenwerken.svg
 
+- name: Schapen
+  location: src/data/schapen.geojson
+  icon: src/svg/oranje/schapen.svg
+
+
 - name: Haters
   location: https://ikhaatgent.firebaseio.com/.json
   icon: src/svg/oranje/haters.svg
