@@ -4,15 +4,15 @@ const overpass = require('query-overpass');
 
 const data = {
   studenten: {
-    file: () => path.join(__dirname, '../assets/overpass/studenten.ql'),
+    file: () => path.join(__dirname, '../assets/overpass/studenten.overpassql'),
     output: () => path.join(__dirname, './data/studenten.geojson'),
   },
   toerisme: {
-    file: () => path.join(__dirname, '../assets/overpass/toerisme.ql'),
+    file: () => path.join(__dirname, '../assets/overpass/toerisme.overpassql'),
     output: () => path.join(__dirname, './data/toerisme.geojson'),
   },
   cafes: {
-    file: () => path.join(__dirname, '../assets/overpass/cafes.ql'),
+    file: () => path.join(__dirname, '../assets/overpass/cafes.overpassql'),
     output: () => path.join(__dirname, './data/cafes.geojson'),
   },
 };
