@@ -46,14 +46,14 @@ jobs:
           echo "## Sync to GitHub 🔄" >> $GITHUB_STEP_SUMMARY
 
           TARGET_DIR=$(mktemp -d /tmp/$REPO_NAME.XXXX)
-          git clone --branch gh-pages origin ${TARGET_DIR}
+          git clone --branch gh-pages refs/remotes/origin ${TARGET_DIR}
           rsync -rt --delete --exclude=".git" --exclude=".github" --exclude="node_modules" . $TARGET_DIR/
           cd $TARGET_DIR
           git add -A
           git config --global user.name 'Haroen Viaene [bot]'
           git config --global user.email 'hello@haroen.me'
           git commit --allow-empty -m "Built from commit ${{ steps.vars.outputs.sha_short }}"
-          git push origin gh-pages
+          git push refs/remotes/origin gh-pages
 
           commit_id=$(git rev-parse HEAD)
           echo "😤 Pushed changes to GitHub in $commit_id" >> $GITHUB_STEP_SUMMARY
