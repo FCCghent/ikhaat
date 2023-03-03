@@ -1,0 +1,52 @@
+name: Update data
+on:
+  schedule:
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Fetch data
+        run: |
+          echo "## Fetch data 📥" >> $GITHUB_STEP_SUMMARY
+
+          if yarn run gipod; then
+            echo "✅ Fetched gipod data ⚠️" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Failed to fetch gipod data ⚠️" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if yarn run overpass; then
+            echo "✅ Fetched overpass data 🗺️" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Failed to fetch overpass data 🗺️" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if yarn run data.stad.gent; then
+            echo "✅ Fetched data.stad.gent data 🏙️" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Failed to fetch data.stad.gent data 🏙️" >> $GITHUB_STEP_SUMMARY
+          fi
+      - name: Update changes in GitHub repository
+        run: |
+          echo "## Sync to GitHub 🔄" >> $GITHUB_STEP_SUMMARY
+
+          git config --global user.name 'Haroen Viaene [bot]'
+          git config --global user.email 'hello@haroen.me'
+          git add -A
+          git commit --allow-empty -m "Built from commit ${{ steps.vars.outputs.sha_short }}"
+          git push origin gh-pages
+
+          commit_id=$(git rev-parse HEAD)
+          echo "😤 Pushed changes to GitHub in $commit_id" >> $GITHUB_STEP_SUMMARY
