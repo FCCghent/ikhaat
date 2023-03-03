@@ -7,7 +7,7 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/gh-pages'
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
