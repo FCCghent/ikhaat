@@ -54,5 +54,5 @@ jobs:
           default_author: github_actor
           message: 'Built from ${{ steps.vars.outputs.sha_short }}'
           new_branch: test-branch
-          pull: ''
+          pull: '--rebase --autostash'
           push: true
