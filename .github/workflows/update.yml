@@ -42,17 +42,12 @@ jobs:
           else
             echo "❌ Failed to fetch data.stad.gent data 🏙️" >> $GITHUB_STEP_SUMMARY
           fi
-      - name: Update files
-        run: |
-          rsync -rt --delete --exclude=".git" --exclude=".github" --exclude="node_modules" . dist/
       - name: Update changes in GitHub repository
         uses: EndBug/add-and-commit@v9
         with:
-          add: 'dist'
           author_name: Haroen Viaene [bot]
           author_email: hello@haroen.me
           default_author: github_actor
           message: 'Built from ${{ steps.vars.outputs.sha_short }}'
-          new_branch: test-branch
           pull: ' '
           push: true
