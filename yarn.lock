@@ -239,10 +239,6 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-gh-pages-travis@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gh-pages-travis/-/gh-pages-travis-1.0.0.tgz#951dd9a328bfab517267c2d3dd26c5eaa02606ff"
-
 gipod-to-geojson@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/gipod-to-geojson/-/gipod-to-geojson-3.0.0.tgz#305c2500c38ae5df200e79cba4bb868c0eff665d"
