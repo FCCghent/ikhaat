@@ -48,6 +48,6 @@ jobs:
           author_name: Haroen Viaene [bot]
           author_email: hello@haroen.me
           default_author: github_actor
-          message: 'Built from ${{ steps.vars.outputs.sha_short }}'
+          message: 'Update data manually'
           pull: ' '
           push: true
