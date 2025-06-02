@@ -14,9 +14,7 @@ function extractFieldsGeometry(result) {
 function extractGeometry(result) {
   return {
     type: 'FeatureCollection',
-    features: JSON.parse(result.body).records.map(
-      (record) => record.geometry
-    ),
+    features: JSON.parse(result.body).records.map((record) => record.geometry),
   };
 }
 
@@ -26,11 +24,11 @@ const urls = [
     transform: extractFieldsGeometry,
     output: path.join(__dirname, './data/speelterreinen.geojson'),
   },
-  {
-    url: 'https://data.stad.gent/api/records/1.0/search/?dataset=hondentoilletten-gent&rows=1000',
-    transform: extractFieldsGeometry,
-    output: path.join(__dirname, './data/hondenvoorzieningen.geojson'),
-  },
+  // {
+  //   url: 'https://data.stad.gent/api/records/1.0/search/?dataset=hondentoilletten-gent&rows=1000',
+  //   transform: extractFieldsGeometry,
+  //   output: path.join(__dirname, './data/hondenvoorzieningen.geojson'),
+  // },
   // {
   //   url: 'https://datatank.stad.gent/4/doelgroepen/clubhuizenvoorsenioren.geojson',
   //   output: path.join(__dirname, './data/clubhuizenvoorsenioren.geojson'),
