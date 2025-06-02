@@ -25,11 +25,11 @@ jobs:
         run: |
           echo "## Fetch data 📥" >> $GITHUB_STEP_SUMMARY
 
-          if yarn run gipod; then
-            echo "✅ Fetched gipod data ⚠️" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ Failed to fetch gipod data ⚠️" >> $GITHUB_STEP_SUMMARY
-          fi
+          # if yarn run gipod; then
+          #   echo "✅ Fetched gipod data ⚠️" >> $GITHUB_STEP_SUMMARY
+          # else
+          #   echo "❌ Failed to fetch gipod data ⚠️" >> $GITHUB_STEP_SUMMARY
+          # fi
 
           if yarn run overpass; then
             echo "✅ Fetched overpass data 🗺️" >> $GITHUB_STEP_SUMMARY
